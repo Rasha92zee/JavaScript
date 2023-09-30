@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Asynchronous operation using setTimeOut()</h1>
+
+    <script>
+        function myfunction1(){
+            return "This is data1";
+        }
+        function myfunction2(){
+            setTimeout(()=>{
+                return "This is data2";
+            },10000);
+        }
+        
+        function myfunction3(){
+            return "This is Data3";
+        }
+
+        data1 = myfunction1 ();
+        console.log(data1)
+
+        data2 = myfunction2 ();
+        console.log(data2)
+
+        data3 = myfunction3 ();
+        console.log(data3)
+    </script>
+</body>
+</html>

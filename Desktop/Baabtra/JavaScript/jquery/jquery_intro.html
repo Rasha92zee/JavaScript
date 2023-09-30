@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+      #div1 {
+        height: 100px;
+        width: 500px;
+        background-color: rgb(214, 207, 111);
+        margin-bottom: 10px;
+      }
+      #div2 {
+        height: 100px;
+        width: 500px;
+        background-color: rgb(98, 241, 134);
+        margin-bottom: 10px;
+        display: none;
+      }
+      #div3 {
+        height: 100px;
+        width: 500px;
+        background-color: rgb(7, 101, 30);
+        margin-bottom: 10px;
+        /* display: none; */
+      }
+      #div4 {
+        height: 100px;
+        width: 500px;
+        background-color: rgb(98, 167, 241);
+        margin-bottom: 10px;
+        /* display: none; */
+      }
+      #div5 {
+        height: 100px;
+        width: 500px;
+        background-color: rgb(241, 98, 220);
+        margin-bottom: 10px;
+        /* display: none; */
+      }
+      #div6 {
+        height: 150px;
+        width: 500px;
+        background-color: rgb(255, 100, 44);
+        margin-bottom: 10px;
+      }
+
+      #div7 {
+        height: 150px;
+        width: 500px;
+        background-color: rgb(45, 158, 192);
+        margin-bottom: 10px;
+        border: 2px solid black;
+        position: absolute;
+
+      }
+
+
+    </style>
+  </head>
+  <body>
+    <h1 id="heading">jQuery</h1>
+    <p class="para1">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae quaerat
+      pariatur aliquam ipsa beatae, ab facere, labore fuga saepe numquam nihil
+      repellat tenetur excepturi. Placeat quidem adipisci itaque aut praesentium
+      dignissimos harum quod molestias odit, consequatur impedit, officiis
+      doloribus eum quo quae! Maxime temporibus fugit totam repudiandae porro?
+      Debitis voluptas, odio enim dolores itaque temporibus aperiam
+      exercitationem voluptate deserunt facere unde at! Delectus a quo possimus
+      quibusdam illum laudantium, eos voluptates modi officia esse eveniet porro
+      ipsum reiciendis quae totam voluptatum eaque exercitationem laborum
+      repellendus. Libero quos in modi iusto possimus similique, fugit officia?
+      Veniam autem tempora placeat mollitia neque.
+    </p>
+    <span>Lorem ipsum dolor sit amet.</span> <br />
+    <h3 id="h3">Lorem ipsum dolor sit amet consectetur.</h3>
+    <br />
+
+    <div id="div1"></div>
+
+    <button id="hide">hide</button>
+    <button id="show">show</button>
+    <button id="toggle">toggle</button> <br />
+    <br />
+
+    <div id="div2"></div>
+    <div id="div3"></div>
+    <div id="div4"></div>
+    <div id="div5"></div>
+    <button id="fadeIn">fade in</button>
+    <button id="fadeOut">fade out</button>
+    <button id="fadeToggle">fade toggle</button>
+    <button id="fadeTo">fade to</button>
+    <p>
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor, sint
+      natus? Maiores veritatis autem possimus iure quae pariatur officiis saepe.
+      Repellendus quas maxime distinctio est autem quos facilis quibusdam
+      similique, veniam error. Veritatis deleniti qui incidunt accusantium
+      aspernatur excepturi vero laboriosam. Id nisi deserunt, natus vel tempore
+      itaque in quae, eos quidem quo delectus non voluptatibus, nesciunt
+      tenetur. Maiores quod, et assumenda doloribus in reprehenderit beatae,
+      dignissimos, voluptate hic voluptas vero voluptates. Repellendus nesciunt
+      voluptates ipsa fugit asperiores aspernatur beatae dolores illum iusto,
+      praesentium quos similique ullam magni laborum molestiae quis recusandae
+      voluptatem, blanditiis incidunt. Totam facere quae quas dolorem.
+    </p>
+    <div id="div6"></div>
+    <button id="slideDown">slide down</button>
+    <button id="slideUp">slide up</button>
+    <button id="slideToggle">slide toggle</button>
+    <div id="div7"></div>
+    <button id="animate">Animate</button>
+
+
+    <script>
+      $(document).ready(function () {
+        // $("span").css("color", "red");
+        $("span").css({
+          color: "green",
+          backgroundColor: "pink",
+          fontSize: "30px",
+        });
+
+        $("#heading").css({
+          color: "blue",
+          fontSize: "40px",
+        });
+
+        $(".para1").css({
+          color: "brown",
+          fontSize: "25px",
+        });
+
+        $(".para1").click(function () {
+          $(this).hide();
+          $("span").css({
+            color: "purple",
+            backgroundColor: "yellow",
+            border: "1px solid grey",
+            fontSize: "20px",
+          });
+        });
+
+        $("#heading").dblclick(function () {
+          $("#h3").css({
+            color: "violet",
+            backgroundColor: "lightblue",
+            fontSize: "30px",
+          });
+        });
+        // display effects
+        $("#hide").click(function () {
+          $("#div1").hide();
+        });
+        $("#show").click(function () {
+          $("#div1").show();
+        });
+        $("#toggle").click(function () {
+          $("#div1").toggle();
+        });
+
+        // fade effects
+
+        $("#fadeIn").click(function () {
+          // $("#div2").fadeIn();
+          // $("#div2").fadeIn("slow");
+          // $("#div2").fadeIn("fast");
+
+          $("#div2").delay(3000).fadeIn(2000);
+        });
+        $("#fadeOut").click(function () {
+          $("#div2").fadeOut();
+        });
+        $("#fadeToggle").click(function () {
+          $("#div4").delay(5000).fadeToggle();
+        });
+        $("#fadeTo").click(function () {
+          $("#div5").fadeTo("slow", 0.1);
+        });
+
+        // slide effects
+        $("#slideDown").click(function () {
+          $("#div6").delay(4000).slideDown("slow").delay(2000).fadeOut("slow");
+        });
+        $("#slideUp").click(function () {
+          $("#div6").slideUp("slow");
+        });
+        $("#slideToggle").click(function () {
+          $("#div6").slideToggle();
+        });
+      });
+      
+      $("document").ready(function () {
+        $("#animate").click(function () {
+          $("#div7").animate({
+            left: "300px",
+          });
+          // $('#div4').animate({
+          //     'left': '300px'
+          // });
+        });
+      });
+    </script>
+  </body>
+</html>

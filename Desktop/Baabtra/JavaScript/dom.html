@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Dom</h1>
+    <p id="p1">Lorem ipsum dolor sit amet consectetur.</p>
+    <input
+      type="button]"
+      name=""
+      id=""
+      value="create element"
+      onclick="createNewElement()"
+    />
+
+    <script>
+      console.log(document);
+      document.getElementById("p1").innerHTML = "new content";
+
+      function createNewElement() {
+        var newPara = document.createElement("p");
+        newPara.innerHTML =
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique fugiat nobis sapiente quisquam eligendi! Corporis hic sequi iusto unde mollitia.";
+        var body = document.body
+        body.appendChild(newPara)
+        }
+
+    </script>
+  </body>
+</html>

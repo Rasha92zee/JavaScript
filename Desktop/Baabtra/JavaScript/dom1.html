@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div><input type="text" id="txt1" /></div>
+    <div><input type="text" id="txt2" /></div>
+
+    <span id="result"></span>
+
+   <select name="" id="op" onchange="operation('valueStored')">
+    <option disabled selected>Operations</option>
+    <option value="+">Add</option>
+    <option value="-">Subtract</option>
+    <option value="*">Multiply</option>
+    <option value="/">Divide</option>
+   </select>
+   
+
+   <!-- <button onclick="operation('+')">Add</button>
+    <div> 
+      <button onclick="operation('-')">SUBTRACT</button>
+    </div>
+    <div>
+        <button onclick="operation('*')">MULTIPLY</button>
+    </div>
+    <div>
+        <button onclick="operation('/')">DIVIDE</button>
+    </div> -->
+
+    <script>
+
+      function operation(valueStored) {
+        var num1 = parseInt(document.getElementById("txt1").value);
+        var num2 = parseInt(document.getElementById("txt2").value);        
+        var spanResult = document.getElementById("result");
+        var valueStored = document.getElementById('op').value;
+       
+        if (valueStored == '+'){
+            var sum = num1 + num2;
+            spanResult.innerHTML = sum;
+            spanResult.style.color = "pink";
+        }
+        else if (valueStored == '-'){
+            var diff = num1 - num2;
+            spanResult.innerHTML = diff;
+            spanResult.style.color = "green";
+        }
+        else if (valueStored == '*'){
+            var ans = num1 * num2;
+            spanResult.innerHTML = ans;
+            spanResult.style.color = "blue";
+        }
+        else if (valueStored == '/'){
+            var reminder = num1 / num2;
+            spanResult.innerHTML = reminder;
+            spanResult.style.color = "red";
+        }
+        else{ 
+            alert("try again")
+         }   
+      }
+
+    </script>
+  </body>
+</html>

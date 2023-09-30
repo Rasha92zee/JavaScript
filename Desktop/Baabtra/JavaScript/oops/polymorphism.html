@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class Shape {
+        constructor(name){
+            this.name = name;
+
+        }
+        calculateArea(){
+          return 0;
+        }
+      }
+
+      class Circle extends Shape {
+        constructor(name, radius){
+          super(name);
+          this.radius = radius;
+        //   console.log(this.radius)
+        }
+
+        calculateArea(){
+          return Math.PI * this.radius * this.radius;
+        }
+      }
+
+      class Square extends Shape {
+        constructor(name, sidelength) {
+          super(name);
+          this.sidelength = sidelength;
+        }
+
+        calculateArea() {
+          return this.sidelength * this.sidelength;
+        }
+      }
+
+      const circle = new Circle("circle", 5);
+      const square = new Square("square", 4);
+      
+      console.log(`Area of circle with radius ${circle.radius} is ${circle.calculateArea().toFixed(3)}`)
+      console.log(`Area of square with sidelength ${square.sidelength} is ${square.calculateArea()}`)
+
+     
+
+
+    </script>
+  </body>
+</html>

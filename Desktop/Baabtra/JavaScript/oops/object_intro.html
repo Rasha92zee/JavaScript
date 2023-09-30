@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      pdtName1 = "Monitor";
+      pdtPrice1 = "5000";
+
+      pdtName2 = "keyBoard";
+      pdtPrice2 = "550";
+
+      function printDet(name, price) {
+        console.log(`name is ${name}  `);
+        console.log(`price is ${price} \n `);
+      }
+
+      printDet(pdtName1, pdtPrice1);
+      printDet(pdtName2, pdtPrice2);
+
+      product1 = {
+        name: "laptop",
+        price: 3400,
+        printDetails(){
+            console.log(`${this.name} costs ${this.price}`)
+        }
+      }
+
+      product2 = {
+        name: "mouse",
+        price: 400,
+        printDetails(){
+            console.log(`${this.name} costs ${this.price}`)
+        }
+      };
+
+      console.log(product1);
+      console.log(product1.name);
+      console.log(product1["price"]);
+      product1.printDetails();
+
+      product1.specs = "64gb"
+      console.log(product1)
+
+      console.log(product2);
+      console.log(product2.name);
+      console.log(product2["price"]);
+      product1.printDetails();
+
+
+      class Product{
+        constructor(name, price){
+          this.name = name;
+          this.price = price;
+        }
+        printDetails(){
+          console.log(this.name + " costs " + this.price);
+        }
+      }
+
+      product1 = new Product("monitor" , 4000);
+      product2 = new Product("Cpu", 4600);
+
+      console.log(product1.name);
+      console.log(product1.price);
+      product1.printDetails();
+
+      console.log(product2.name);
+      console.log(product2.price);
+      product2.printDetails();
+
+
+
+       
+    </script>
+  </body>
+</html>

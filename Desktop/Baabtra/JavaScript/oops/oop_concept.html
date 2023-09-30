@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Product{
+            static count = 0;
+
+            constructor(name, price, category){
+                this.name = name;
+                this.price = price;
+                this.category = category;
+                Product.count = Product.count + 1;
+            }
+            displayProduct(){
+                console.log(`Name is ${this.name}`);
+                console.log(`Price is ${this.price}`);
+                console.log(`Category is ${this.category}`);              
+            }
+            productCount(){
+                console.log(`Total number of products : ${Product.count}`);
+                console.log("\n")
+                console.log('-----------------------------------')
+            }
+        }
+        product1 = new Product("Monitor", 2500, "Devices");      
+        product1.displayProduct();
+        product1.productCount(); 
+
+
+        product2 = new Product("Mouse", 870, "Devices");
+        product2.displayProduct();
+        product2.productCount();
+
+        
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Asynchronous operation using async and await</h1>
+    <script>
+      function myfunction1() {
+        return "This is data1";
+      }
+      function myfunction2() {
+        return new Promise(function (resolve, reject) {
+          setTimeout(function () {
+            resolve("This is data2");
+          }, 1000);
+        });
+      }
+
+      function myfunction3() {
+        return "This is Data3";
+      }
+
+      async function printData() {
+        data1 = myfunction1();
+        console.log(data1);
+
+        let data2 = await myfunction2();
+        console.log(data2);
+
+        data3 = myfunction3();
+        console.log(data3);
+      }
+      printData()
+    </script>
+  </body>
+</html>

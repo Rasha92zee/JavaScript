@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const languages = ["python", "java", "javascript"];
+      let [l1, l2, l3] = languages;
+      
+    //   Traditional assignment
+      l1 = languages[0];
+      l2 = languages[1];
+      l3 = languages[2];
+
+      console.log(languages);
+      console.log(l1);
+      console.log(l2);
+      console.log(l3);
+   
+    //  Destructuring Assignment
+
+      const [ln1, ln2, ln3] = languages
+      console.log(languages);
+      console.log(l1);
+      console.log(l2);
+      console.log(l3);
+
+      const employee = {
+        name : "ravi", 
+        age : 23,
+        designation : "Programmer" ,
+        department : "IT" 
+      }
+
+    //   const name = employee.name
+    //   const age = employee.age
+    //   const designation =  employee.designation
+    //   const department = employee.department
+
+      console.log(employee)
+    //   console.log(name)
+    //   console.log(age)
+    //   console.log(designation)
+    //   console.log(department)
+
+      const {name, age, designation, department} = employee
+      console.log(employee)
+      console.log(name)
+      console.log(age)
+      console.log(designation)
+      console.log(department)
+
+    //   template literals
+    
+      let fName = "Rasha"
+      let lName = "Hasoon"
+      console.log(`My name is ${fName} ${lName}` )
+
+
+      numbers = [23, 6, 56, 78]
+      console.log(numbers)
+      // newNumbers = [numbers, 34, 57]
+      newNumbers = [...numbers, 34, 57]
+      console.log(newNumbers)
+
+
+      let _employee = {
+        _name: 'Jay',
+        _age: 35,
+        _designation: 'Programmer',
+        _department: 'IT'
+
+      };
+
+      _employee= {..._employee,
+        _department: 'Software Dev',
+        gender: 'Male'
+      }
+
+      console.log(_employee)
+
+      
+
+
+
+    </script>
+  </body>
+</html>

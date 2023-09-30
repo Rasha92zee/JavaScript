@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>String and Array methods</h1>
+
+    <script>
+        console.log('Array Methods');
+        console.log('\n');
+        var fruits = ['strawberry', 'lichi', 'watermelon', 'blueberry'];
+        var arr = ['a', 'b', 'c', 'd'];
+        var veg = ['potato', 'ladyfinger', 'spinach', 'turnip']
+
+
+        console.log(fruits);
+        console.log(fruits.length);
+        console.log(fruits.toString());
+        console.log(fruits.join(' - '));
+        console.log(fruits.pop());
+        console.log(fruits);
+        console.log(fruits.push('mulberry', 'orange'));
+        console.log(fruits);
+        console.log(fruits.shift());
+        console.log(fruits);
+        console.log(fruits.unshift('jackfruit'));
+        console.log(fruits);
+
+        console.log(fruits.splice(1,2, 'pineapple', 'apple'));
+        console.log(fruits);
+        console.log(fruits.slice(3));
+        console.log(fruits);
+
+        console.log(fruits.reverse());
+        console.log(fruits.sort());
+        console.log(fruits.reverse());
+        console.log(fruits);
+        
+        fruits[1] = 'plum';
+        console.log(fruits);
+
+        delete fruits[3];
+        console.log(fruits);
+
+        console.log(arr.concat(fruits));
+        var newArr = arr.concat(fruits, veg)
+        console.log(newArr);
+
+        console.log('\n');
+
+    </script>
+</body>
+</html>

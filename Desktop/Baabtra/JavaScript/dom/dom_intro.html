@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+  </head>
+  <body>
+    <h1 id="heading">Lorem ipsum dolor s</h1>
+    <p class="para">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. At ducimus illo
+      minima quas omnis delectus corrupti impedit sapiente excepturi quo veniam
+      inventore voluptatibus est, autem ea quam, consequuntur, odit libero iusto
+      molestias. Quidem illum corrupti numquam possimus pariatur earum quaerat
+      nobis, corporis temporibus, deleniti quasi veritatis magnam eos ut amet?
+    </p>
+    <ul id="lists">
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+    </ul>
+
+    <input type="text" value = "rasha" id="inp1">
+    <input type="button" name="" id="fog" value="change heading" onclick="changeHeading()">
+    <input type="button" name="" id="for" value="change value" onclick="changeValue()">
+    <input type="button" name="" id="styl" value="change style" onclick="changeStyle()">
+
+    <script>
+        document.write("hello world")
+        document.write("hello  <h1>Lorem ipsum dolor sit.</h1> <br> world")
+
+        var heading = document.getElementById("heading")
+        var paragraph = document.getElementsByClassName("para")
+        var list = document.getElementsByTagName("ul")
+        console.log(heading)
+        console.log(paragraph)
+        console.log(list)
+        
+        function changeHeading(){
+            var btn = document.getElementById("fog")
+            var heading = document.getElementById("heading")
+            // heading.innerHTML = " <u> new heading <i> content </i> </u> " 
+            heading.innerText = " <u> new heading <i> content </i> </u> "
+            
+        }
+
+        function changeValue(){
+
+            document.getElementById("inp1").value = "rasha hasoon"            
+        }
+        function changeStyle(){
+            var list =  document.getElementById("lists")
+            console.log(list)
+            // list.style.color = "blue"
+            // list.style.fontSize = "30px"
+            list.style.cssText = "background-color : green; list-style : square; font-size:40px; color:yellow; "
+        }
+        
+                
+    </script>
+
+  </body>
+</html>

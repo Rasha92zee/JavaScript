@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        margin-left: 340px;
+        margin-top: 80px;
+        width: 400px;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: rgb(231, 176, 176);
+      }
+
+      .form{
+        padding-left: 90px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form action="">
+        <label for="" style="font-size: 25px"><center><b>Details</b></center></label>
+        <div class="form">
+          <br />
+          <label for="name">Name: </label>
+          <input type="text" name="name" id="name" />
+          <span id="nameError"></span>
+          <br />
+          <br />
+          <label for="">Email: </label>
+          <input type="text" name="" id="email" />
+          <span id="emailError"></span>
+          <br />
+          <br />
+          <label for="contactNumber">Contact Number:</label>
+          <input type="text" name="contactNumber" id="contactNumber" />
+          <span id="numberError"></span>
+          <br /><br />
+          <label for="dob">Date of Birth:</label>
+          <input type="date" name="" id="dob" />
+          <span id="dateError"></span>
+          <br />
+          <br />
+          <label for="gender">Gender:</label>
+          <input type="radio" name="gender" id="male" value="Male" />Male
+          <input type="radio" value="Female" id="Female" name="gender" />Female
+          <span id="genderError"></span>
+          <br /><br />
+          <label for="username">Username:</label>
+          <input type="text" name="username" id="username" />
+          <span id="usernameError"></span>
+          <br />
+          <br />
+          <label for="pswd">Password:</label>
+          <input type="password" id="pswd" />
+          <span id="pswdError"></span>
+          <br />
+          <br />
+          <br />
+          <br />
+          <input
+            type="button"
+            name=""
+            id=""
+            onclick="validate()"
+            value="submit"
+          />
+        </div>
+      </form>
+    </div>
+
+    <script>
+      function validate() {
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var contact = document.getElementById("contactNumber").value;
+        var dob = document.getElementById("dob").value;
+        var gender = document.querySelector('input[name="gender"]:checked');
+        var username = document.getElementById("username").value;
+        var pswd = document.getElementById("pswd").value;
+
+        var span_name = document.getElementById("nameError");
+        var span_email = document.getElementById("emailError");
+        var span_number = document.getElementById("numberError");
+        var span_date = document.getElementById("dateError");
+        var span_gender = document.getElementById("genderError");
+        var span_username = document.getElementById("usernameError");
+        var span_password = document.getElementById("pswdError");
+
+        var s_name_pattern = /^[a-z, A-Z]+$/
+        var email_pattern = /^[a-zA-Z0-9._-]+@[a-zA-Z.-]+\.[a-zA-Z]{2,4}$/
+        var contact_pattern = /^[+]{1}(?:[0-9\-\(\)\/\.]\s?){6, 15}[0-9]{1}$/
+        var username_pattern = /^[A-Za-z][A-Za-z0-9_]{7,29}$/
+
+      
+
+        var status = true;
+
+        if (name === "") {
+          status = false;
+          span_name.style.display = "block";
+          span_name.innerHTML = "please enter your name";
+          span_name.style.color = "red";
+        } else {
+          span_name.style.display = "none";
+          if (name.match(s_name_pattern) == null ){
+            status = false;
+            span_name.style.display = "block";
+            span_name.innerHTML = "incorrect name pattern"
+            // alert("name pattern incorrect")
+            span_name.style.color = "brown";
+          }
+        }
+
+        if (email === "") {
+          status = false;
+          span_email.style.display = "block";
+          span_email.innerHTML = "please enter your email";
+          span_email.style.color = "red";
+        } else {
+          span_email.style.display = "none";
+          if (email.match(email_pattern) == null ){
+            status = false;
+            span_email.style.display = "block";
+            span_email.innerHTML = "incorrect email pattern"
+            span_email.style.color = "green";
+          }
+        }
+
+        if (contact === "") {
+          status = false;
+          span_number.style.display = "block";
+          span_number.innerHTML = "please enter your contact number";
+          span_number.style.color = "red";
+        } else {
+          span_number.style.display = "none";
+          if (contact.match(contact_pattern) == null ){
+            status = false;
+            span_number.style.display = "block";
+            span_number.innerHTML = "incorrect number pattern"
+            span_number.style.color = "green";
+          }
+        }
+
+        if (dob === "") {
+          status = false;
+          span_date.style.display = "block";
+          span_date.innerHTML = "please enter your date of birth";
+          span_date.style.color = "red";
+        } else {
+          span_date.style.display = "none";
+        }
+
+        if (!gender) {
+          status = false;
+          span_gender.style.display = "block";
+          span_gender.innerHTML = "* please select your gender";
+          span_gender.style.color = "red";
+        } else {
+          span_gender.style.display = "none";
+        }
+
+        if (username === "") {
+          status = false;
+          span_username.style.display = "block";
+          span_username.innerHTML = "please enter your username";
+          span_username.style.color = "red";
+        } else {
+          span_username.style.display = "none";
+          if (username.match(username_pattern) == null ){
+            status = false;
+            span_username.style.display = "block";
+            span_username.innerHTML = "incorrect username pattern"
+            span_username.style.color = "green";
+          }
+        }
+
+        if (pswd === "") {
+          status = false;
+          span_password.style.display = "block";
+          span_password.innerHTML = "please enter your password";
+          span_password.style.color = "red";
+        } else {
+          span_password.style.display = "none";
+        }
+        return status;
+      }
+    </script>
+  </body>
+</html>

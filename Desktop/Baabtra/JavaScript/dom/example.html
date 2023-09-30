@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="">
+    <label for="1st">Fist number</label>
+    <input type="text" id="1st" />
+    <label for=""> </label>
+    <select name="" id="choose">
+      <option value="+">+</option>
+      <option value="-">-</option>
+      <option value="*">*</option>
+      <option value="/">/</option>
+    </select>
+    <label for="2nd">Second Number</label>
+    <input type="text" name="" id="2nd" /> <br>
+    <input type="button" value="calculate" onclick="calculate()"> <br> <br>
+    </form>
+
+    <h1>Result : <span id="result"></span></h1>
+    
+    
+    <script>
+        function calculate(){
+            var result = 0
+            var num1 = Number(document.getElementById("1st").value) 
+            var num2 = Number(document.getElementById("2nd").value)
+            var operator = document.getElementById("choose").value
+            if(operator == "+" ){
+                result = num1 + num2
+            }
+            else if(operator == "-" ){
+                result = num1 - num2
+            }
+            else if(operator == "*" ){
+                result = num1 * num2
+            }
+            else if(operator == "/" ){
+                result = num1 / num2
+            }
+            document.getElementById("result").innerHTML += result
+                      
+        }
+        document.getElementById("result").innerHTML = ""
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Scope of Variables</h1>
+
+    <script>
+      //   function scope1() {
+      //     user = "baabtra";
+      //     console.log("User inside function: " + user);
+      //     if (true) {
+      //       age = "10";
+      //       console.log("User inside block: " + user);
+      //       console.log("Age inside block:" + age);
+      //     }
+      //     console.log("Age after block: " + age);
+      //   }
+      //   scope1();
+      //   console.log("User outside block: " + user);
+      //   console.log("Age outside block:" + age);
+
+      // function scope2() {
+      //     var user = "baabtra";
+      //     console.log("User inside function: " + user);
+      //     if (true) {
+      //       var age = "10";
+      //       console.log("User inside block: " + user);
+      //       console.log("Age inside block:" + age);
+      //     }
+      //     console.log("Age after block: " + age);
+      //   }
+      //   scope2();
+      //   console.log("User outside block: " + user);
+      //   console.log("Age outside block:" + age);
+
+      // function scope3() {
+      // let user = "baabtra";
+      //     console.log("User inside function: " + user);
+      //     if (true) {
+      //       let age = "10";
+      //       console.log("User inside block: " + user);
+      //       console.log("Age inside block:" + age);
+      //     }
+      //     console.log("Age after block: " + age);
+      //   }
+      //   scope3();
+      //   console.log("User outside block: " + user);
+      //   console.log("Age outside block:" + age);
+
+      function scope4() {
+        const user = "baabtra";
+        console.log("User inside function: " + user);
+        if (true) {
+          let age = "10";
+          console.log("User inside block: " + user);
+          console.log("Age inside block:" + age);
+          age = "30"
+          console.log("Age inside block:" + age);
+        }
+        // user = "CyberSquare"
+        // console.log("Age after block: " + age);
+      }
+      scope4();
+    //   console.log("User outside block: " + user);
+    //   console.log("Age outside block:" + age);
+    </script>
+  </body>
+</html>

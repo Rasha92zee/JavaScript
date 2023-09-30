@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <style>
+      #empty {
+        background-color: aqua;
+        border: 2px solid black;
+        color: blue;
+        height: fit-content;
+        margin: 20px;
+        padding: 15px;
+        font-size: 20px;
+      }
+
+      #remove {
+        background-color: rgb(127, 212, 162);
+        border: 2px solid black;
+        color: rgb(221, 81, 111);
+        height: fit-content;
+        margin: 20px;
+        padding: 10px;
+        font-size: 20px;
+      }
+
+      #div1 {
+        background-color: rgb(117, 117, 179);
+        border: 3px solid black;
+        height: 200px;
+      }
+
+      #div2 {
+        background-color: rgb(117, 179, 174);
+        border: 3px solid black;
+        height: 200px;
+      }
+
+      .formatText {
+        font-size: 20px;
+        color: coral;
+        text-align: center;
+        text-decoration: underline;
+        font-weight: 300;
+        font-family: cursive;
+      }
+
+      #div3 {
+        background-color: rgb(162, 179, 117);
+        border: 3px solid rgb(150, 51, 51);
+        height: 400px;
+
+        padding-left: 45px;
+        padding-bottom: 35px;
+        padding-top: 25px;
+        padding-right: 10px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        margin-left: 30px;
+        margin-right: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="h1">Lorem ipsum dolor sit.</h1>
+    <p id="para1" class="">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum ratione nam
+      fugit quos iste nisi pariatur blanditiis. Tenetur eligendi maiores
+      <b>Lorem, ipsum dolor.</b> <u>Lorem, ipsum dolor.</u>
+      <i>Lorem ipsum dolor sit.</i>
+      temporibus dignissimos, ut et magni ipsa laudantium ab velit assumenda
+      dolorum libero exercitationem! Similique illo illum sit minima, quia
+      blanditiis cum, ut suscipit, hic esse libero at earum facilis recusandae.
+    </p>
+    <input type="text" name="" id="header" />
+    <br />
+    <br />
+
+    <button type="button" id="btn1">Show Text</button>
+    <button type="button" id="btn2">Show Html</button>
+    <button type="button" id="btn3">Show Value</button>
+    <br />
+    <br />
+
+    <p id="para2 ">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum ratione nam
+      fugit quos iste nisi pariatur blanditiis. Tenetur eligendi maiores
+      <b>Lorem, ipsum dolor.</b> <u>Lorem, ipsum dolor.</u>
+      <i>Lorem ipsum dolor sit.</i>
+      temporibus dignissimos, ut et magni ipsa laudantium ab velit assumenda
+      dolorum libero exercitationem! Similique illo illum sit minima, quia
+      blanditiis cum, ut suscipit, hic esse libero at earum facilis recusandae.
+    </p>
+    <input type="text" name="" id="header1" />
+    <br />
+    <br />
+
+    <button type="button" id="btn4">Set Text</button>
+    <button type="button" id="btn5">Set Html</button>
+    <button type="button" id="btn6">Set Value</button> <br /><br />
+
+    <div id="empty">
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla sed
+        ratione qui perferendis impedit, fuga est at vitae, ducimus quo
+        doloremque sequi molestias libero doloribus eos voluptatem, velit et
+        aliquid accusamus. Illum voluptatibus, deserunt eos unde tempora natus
+        saepe provident debitis dolorem enim, sed hic. Voluptatibus tenetur
+        maxime consequuntur recusandae fuga laboriosam quisquam explicabo alias
+        amet quos rem corrupti eveniet iusto quasi praesentium labore quidem
+        magnam reiciendis maiores ipsam natus aliquam, blanditiis est
+        necessitatibus. Minus quisquam recusandae possimus voluptatem dolorum
+        officiis doloremque sint velit odio? Nesciunt autem optio non adipisci!
+        Voluptates hic ipsum ab explicabo vero quos atque vitae magni?
+      </p>
+      <b>Lorem, ipsum dolor.</b>
+      <h3>Lorem ipsum dolor sit.</h3>
+    </div>
+    <div id="remove">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi omnis ea
+        dicta, nobis adipisci voluptas ipsam corporis laborum quasi, optio
+        repellendus fugiat esse! Voluptatibus at magni iure enim odit eveniet
+        dolores quidem, sunt numquam praesentium accusantium est expedita
+        placeat amet earum consectetur. Illo consectetur explicabo harum enim,
+        dicta ea maiores, reiciendis sapiente ad laboriosam at optio possimus?
+        Architecto!
+      </p>
+      <h4>Lorem ipsum dolor sit amet.</h4>
+      <h6>Lorem ipsum dolor sit amet.</h6>
+    </div>
+    <br />
+
+    <button type="button" id="btn7">remove</button>
+    <button type="button" id="btn8">Empty</button> <br /><br />
+
+    <div id="div1" style="display: none"></div>
+
+    <div id="div2" style="visibility: hidden"></div>
+    <p>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro libero
+      aspernatur sed accusantium nihil labore culpa minus perspiciatis ea,
+      perferendis eveniet reiciendis quaerat quas sequi atque fuga aliquam,
+      soluta sunt quo ipsum! Mollitia id accusantium repudiandae consectetur.
+      Dolore alias quae officia amet perspiciatis tempora soluta, dolores eum
+      possimus nisi eaque quisquam. Blanditiis, aspernatur. Rem aliquam ullam,
+      labore temporibus delectus eveniet, repellendus aut cupiditate, fuga
+      cumque explicabo mollitia amet! Iusto itaque repellat dignissimos natus
+      voluptas modi nobis voluptates at aliquam? Qui dolore vel atque
+      perferendis tempore repellat omnis, culpa sunt facilis deleniti magnam,
+      numquam non. Excepturi impedit qui, in corrupti possimus omnis expedita
+      deserunt laboriosam nesciunt cupiditate consectetur tempora ratione itaque
+      eius recusandae eligendi praesentium, autem hic laudantium exercitationem
+      esse. Tempore harum error neque odit similique a molestiae cupiditate
+      deserunt non. Blanditiis eligendi nostrum, repudiandae aspernatur
+      accusantium, id non maxime harum molestias vero, error at quibusdam. Error
+      maxime nulla voluptate, deleniti modi a recusandae aperiam assumenda!
+      Ipsam sit non fuga nobis consequatur atque, delectus accusantium velit
+      ipsa debitis fugit quisquam ea similique repellendus perspiciatis
+      veritatis aliquam aperiam reprehenderit, rerum impedit, quaerat hic
+      doloremque. Perspiciatis reiciendis voluptate minima illum quo inventore
+      asperiores, incidunt placeat repudiandae ea praesentium iure suscipit
+      maxime provident laboriosam!
+    </p>
+
+    <button id="btn9">Add Class</button>
+
+    <div id="div3">
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt
+        accusamus fuga necessitatibus, delectus, officiis esse atque voluptatem
+        amet aliquam libero modi, odit eum. Obcaecati animi iusto, recusandae
+        fugiat ducimus fuga expedita quis in vero aliquid sapiente nam,
+        consequuntur delectus voluptates explicabo quaerat impedit minus hic!
+
+      </p>
+    </div>
+
+    <button id="addDmns">Add Dimension</button>
+
+    <script>
+      $(document).ready(function () {
+        $("#btn1").click(function () {
+          alert($("#para1").text());
+        });
+        $("#btn2").click(function () {
+          alert($("#para1").html());
+        });
+        $("#btn3").click(function () {
+          alert($("#header").val());
+        });
+        $("#btn4").click(function () {
+          $("#para2").text("Lorem ipsum <h1> Hasoon </h1> dolor sit.");
+        });
+        $("#btn5").click(function () {
+          $("#h1").html("Welcome <h1 style='display:inline;'> Rasha</h1> ");
+        });
+        $("#btn6").click(function () {
+          $("#header1").val("rasha hasoon");
+        });
+
+        $("#btn8").click(function () {
+          $("#empty").empty();
+        });
+        $("#btn7").click(function () {
+          $("#remove").remove();
+        });
+
+        $("#btn9").click(function () {
+          $("p,h4").addClass("formatText");
+        });
+
+        $("#addDmns").click(function () {
+          //to store to this variable q
+          var q = "";
+          q += "width : " + $("#div3").width() + "<br>";
+          q += "height : " + $("#div3").height() + "<br>";
+          q += "innerwidth : " + $("#div3").innerWidth() + "<br>";
+          q += "innerheight : " + $("#div3").innerHeight() + "<br>";
+          $("#div3").html(q);
+        });
+
+
+      });
+
+    </script>
+  </body>
+</html>

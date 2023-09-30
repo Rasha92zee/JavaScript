@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <h1>To Do List</h1>
+    <label for="">Task</label>
+    <input type="text" id="txt" /> <br />
+    <br />
+    <label for="">Description</label>
+    <textarea name="" id="desc" cols="30" rows="3"></textarea> <br />
+    <br />
+    <input
+      type="button"
+      name="add_task"
+      id=""
+      value="Add Task"
+      onclick="addTask()"
+    />
+    <br />
+    <br />
+    <br />
+    <table border="10px" width="80%" id="table">
+      <tr>
+        <th>Sl No</th>
+        <th>Date</th>
+        <th>Task</th>
+        <th>Description</th>
+        <th>Status</th>
+        <th>Complete</th>
+        <th>Delete</th>
+        <th>Edit</th>
+      </tr>
+      <!-- <tr>
+        <td>1</td>
+        <td>11/08/23</td>
+        <td>Complete programs</td>
+        <td>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium,
+          quo.
+        </td>
+        <td>incomplete</td>
+        <td>complete</td>
+        <td><button>delete</button></td>
+        <td>edit</td>
+      </tr> -->`
+    </table>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">
+              &times;
+            </button>
+            <h4 class="modal-title">Modal Header</h4>
+          </div>
+          <div class="modal-body">
+            <label for="">task</label>
+            <input type="text" id="edit_task" />
+            <br />
+            <label for="">description</label>
+            <input type="text" id="edit_desc" />
+            <br />
+            <input type="text" hidden id="trid" />
+          </div>
+          <div></div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              id="editbtn"
+              onclick="edit()"
+              class="btn btn-default"
+              data-dismiss="modal"
+            >
+              submit
+            </button>
+            <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var i = 1;
+
+      function addTask() {
+
+        var task = document.getElementById("txt").value;
+        var description = document.getElementById("desc").value;
+        var table = document.getElementById("table");
+        date = new Date();
+        console.log(date);
+        console.log(date.toDateString());
+
+        var newRow = table.insertRow();
+        newRow.setAttribute("id", i);
+
+        var slNo = newRow.insertCell();
+        var taskDate = newRow.insertCell();
+        var taskName = newRow.insertCell();
+        var taskDescrption = newRow.insertCell();
+        var status = newRow.insertCell();
+        var complete_col = newRow.insertCell();
+        var delete_col = newRow.insertCell();
+        var edit_col = newRow.insertCell();
+
+        slNo.innerHTML = i++;
+        taskDate.innerHTML = date.toDateString();
+        taskName.innerHTML = task;
+        taskDescrption.innerHTML = description;
+
+        var complete_btn = document.createElement("button");
+        complete_btn.innerHTML = "Complete";
+        complete_btn.style.color = "blue";
+
+        complete_btn.onclick = function complete() {
+          status.innerHTML = "Completed";
+          complete_btn.disabled = true;
+        };
+
+        complete_col.appendChild(complete_btn);
+
+        var delete_btn = document.createElement("button");
+        delete_btn.innerHTML = "Delete";
+        delete_btn.style.color = " green";
+
+        delete_btn.addEventListener("click", function handleDelete(event) {
+          var deleteId = event.target.parentElement.parentElement.id;
+          element = document.getElementById(deleteId);
+          element.remove();
+        });
+        delete_col.appendChild(delete_btn);
+
+        var edit_btn = document.createElement("button");
+        edit_btn.innerHTML = "Edit";
+        edit_btn.style.color = "yellow";
+
+        edit_btn.setAttribute("data-toggle", "modal");
+        edit_btn.setAttribute("data-target", "#myModal");
+
+        edit_btn.addEventListener("click", function handleEdit(event) {
+          editId = event.target.parentElement.parentElement.id; 
+          editList = document.getElementById(editId).childNodes;
+
+          console.log(editList);
+          document.getElementById("edit_task").value = editList[2].innerHTML;
+          document.getElementById("edit_desc").value = editList[3].innerHTML;
+        });
+
+        edit_col.appendChild(edit_btn);
+      }
+    
+      function edit(){
+        var newTask = document.getElementById("edit_task").value;
+        var newDesc = document.getElementById("edit_desc").value;
+        submitList = document.getElementById(editId).childNodes;
+
+        console.log(submitList);
+
+        submitList[1].innerHTML = date.toDateString()
+        submitList[2].innerHTML = newTask
+        submitList[3].innerHTML = newDesc
+
+        
+
+      }
+    </script>
+  </body>
+</html>

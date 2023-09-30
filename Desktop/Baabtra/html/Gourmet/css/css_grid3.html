@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gris4</title>
+    <style>
+        .container{
+            background-color: rgb(112, 203, 21);
+            display: grid;
+            grid-template-columns: auto auto auto;
+            grid-template-rows: auto auto auto;
+            
+        }
+        .item1, .item2, .item3, .item4, .item5{
+            border: 1px solid black;
+            height: 200px;
+            grid-gap: 20px;
+        }
+        .item1{
+            grid-area: 1/1/2/4;
+        }
+        .item2{
+            grid-area:2/1/4/2;
+            background-color: aqua;
+        }
+        .item3{
+            grid-area: 2/2/3/3;
+        }
+        .item4{
+            grid-area: 2/3/3/4;
+        }
+        .item5{
+            grid-area: 3/2/4/4;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item1">Heading</div>
+        <div class="item2">Menu</div>
+        <div class="item3">Section1</div>
+        <div class="item4">Section2</div>
+        <div class="item5">Footer</div>
+    </div>
+    
+</body>
+</html>

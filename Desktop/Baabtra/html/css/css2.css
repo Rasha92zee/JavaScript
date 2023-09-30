@@ -1,0 +1,60 @@
+h2 {
+    color: brown;
+    text-align: center;
+    font-weight: 600;
+    font-size: 60px;
+    border: 3px dashed gold;
+}
+
+h1 {
+    color: rgb(25, 202, 234);
+    border: 2px solid rgb(67, 55, 172);
+}
+
+#pl {
+    color: blanchedalmond;
+    
+    font-size: 65px;
+    background-color: black;
+    font-variant: small-caps;
+}
+
+.qw {
+    border: 4px solid gray;
+    height: 200px;
+    width: 400px;
+    color: darkcyan;
+    background-color: rgb(172, 236, 172);
+    overflow: scroll;
+}
+
+.qaa {
+    font-size: 20px;
+    color: olivedrab;
+}
+
+.ms {
+    border: 4px solid red;
+
+}
+
+.ms h2 {
+    color: darkorange;
+    background-color: cyan;
+
+}
+
+h4,
+h5,
+h6 {
+    color: lightcoral;
+    font-size: 24px;
+    background-color: blueviolet;
+
+}
+
+input[type="text"] {
+    color: antiquewhite;
+    background-color: aqua;
+
+}
